@@ -1,0 +1,64 @@
+# =========================================================================
+# Java Core & Compiled Files
+# =========================================================================
+*.class
+*.log
+*.ctxt
+.mtj.tmp/
+hs_err_pid*
+replay_pid*
+
+# =========================================================================
+# Build Tools (ta4j typically uses Maven)
+# =========================================================================
+# Maven target directories
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+pom.xml.bak
+release.properties
+
+# Gradle directories (if using Gradle instead of Maven)
+.gradle/
+build/
+
+# =========================================================================
+# IDE Settings (IntelliJ, Eclipse, VS Code)
+# =========================================================================
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+.metadata/
+.classpath
+.project
+.settings/
+.factorypath
+.vscode/
+
+# =========================================================================
+# Trade Bot & Financial Data Rules (Critical for ta4j)
+# =========================================================================
+# Ignore local historical market data files (large OHLCV CSVs)
+*.csv
+*.json
+!manifest.json
+
+# Ignore local databases used for caching tick/bar data (e.g., H2, SQLite)
+*.db
+*.sqlite
+
+# Ignore private configurations containing Live API Exchange Keys/Secrets
+config.properties
+credentials.yml
+.env
+secret*
+
+# =========================================================================
+# Testing & Code Quality reports (e.g., JaCoCo / SpotBugs reports)
+# =========================================================================
+.jacoco/
+spotbugs/
