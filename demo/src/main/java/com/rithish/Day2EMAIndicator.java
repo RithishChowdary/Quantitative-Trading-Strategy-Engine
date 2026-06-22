@@ -22,10 +22,10 @@ public class Day2EMAIndicator {
             Bar bar = series.barBuilder()
                     .timePeriod(Duration.ofDays(1))
                     .endTime(Instant.now().plusSeconds(i))
-                    .openPrice(100 + i)
-                    .highPrice(105 + i)
-                    .lowPrice(95 + i)
-                    .closePrice(100 + i)
+                    .openPrice(120 + i)
+                    .highPrice(120 + i)
+                    .lowPrice(110 + i)
+                    .closePrice(110 + i)
                     .volume(1000)
                     .build();
 

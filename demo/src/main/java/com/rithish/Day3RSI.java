@@ -7,7 +7,10 @@ import org.ta4j.core.Bar;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.BaseBarSeriesBuilder;
 
-public class Day2MultiBar {
+import org.ta4j.core.indicators.RSIIndicator;
+import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
+
+public class Day3RSI {
 
     public static void main(String[] args) {
 
@@ -21,19 +24,27 @@ public class Day2MultiBar {
                     .timePeriod(Duration.ofDays(1))
                     .endTime(Instant.now().plusSeconds(i))
                     .openPrice(100 + i)
-                    .highPrice(105 + i)
-                    .lowPrice(95 + i)
-                    .closePrice(100 + i)
+                    .highPrice(100 + i)
+                    .lowPrice(90 + i)
+                    .closePrice(95 + i)
                     .volume(1000)
                     .build();
 
             series.addBar(bar);
         }
 
-        System.out.println("Total Bars = "
-                + series.getBarCount());
+        ClosePriceIndicator closePrice =
+                new ClosePriceIndicator(series);
 
-        System.out.println("Last Close = "
-                + series.getLastBar().getClosePrice());
+        RSIIndicator rsi =
+                new RSIIndicator(closePrice, 14);
+
+        int lastIndex = series.getEndIndex();
+
+        System.out.println("Latest Close = "
+                + closePrice.getValue(lastIndex));
+
+        System.out.println("RSI(14) = "
+                + rsi.getValue(lastIndex));
     }
 }
