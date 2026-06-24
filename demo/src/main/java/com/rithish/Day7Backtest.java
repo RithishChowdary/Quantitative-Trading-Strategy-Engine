@@ -18,7 +18,7 @@ import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 import org.ta4j.core.rules.CrossedDownIndicatorRule;
 import org.ta4j.core.rules.CrossedUpIndicatorRule;
 
-public class Day6Backtest {
+public class Day7Backtest {
 
     public static void main(String[] args) {
 
@@ -31,13 +31,13 @@ public class Day6Backtest {
             double close;
 
             if (i < 30) {
-                close = 200 - i;       // Downtrend
+                close = 200 - i;
             }
             else if (i < 60) {
-                close = 170 + i;       // Uptrend
+                close = 170 + i;
             }
             else {
-                close = 260 - i;       // Downtrend again
+                close = 260 - i;
             }
 
             Bar bar = series.barBuilder()
@@ -78,7 +78,7 @@ public class Day6Backtest {
 
             if (buyRule.isSatisfied(i)) {
                 System.out.println(
-                        "BUY at index = "
+                        "BUY at Index = "
                                 + i
                                 + " | Close = "
                                 + closePrice.getValue(i));
@@ -86,7 +86,7 @@ public class Day6Backtest {
 
             if (sellRule.isSatisfied(i)) {
                 System.out.println(
-                        "SELL at index = "
+                        "SELL at Index = "
                                 + i
                                 + " | Close = "
                                 + closePrice.getValue(i));
@@ -103,6 +103,58 @@ public class Day6Backtest {
 
         TradingRecord tradingRecord =
                 manager.run(strategy);
+
+        System.out.println("\n===== TRADE DETAILS =====");
+
+        double totalProfit = 0;
+
+        for (var position : tradingRecord.getPositions()) {
+
+            int entryIndex =
+                    position.getEntry().getIndex();
+
+            int exitIndex =
+                    position.getExit().getIndex();
+
+            double entryPrice =
+                    series.getBar(entryIndex)
+                            .getClosePrice()
+                            .doubleValue();
+
+            double exitPrice =
+                    series.getBar(exitIndex)
+                            .getClosePrice()
+                            .doubleValue();
+
+            double profit =
+                    ((exitPrice - entryPrice)
+                            / entryPrice) * 100;
+
+            totalProfit += profit;
+
+            System.out.println(
+                    "Entry Index = "
+                            + entryIndex);
+
+            System.out.println(
+                    "Entry Price = "
+                            + entryPrice);
+
+            System.out.println(
+                    "Exit Index = "
+                            + exitIndex);
+
+            System.out.println(
+                    "Exit Price = "
+                            + exitPrice);
+
+            System.out.println(
+                    "Profit % = "
+                            + profit);
+
+            System.out.println(
+                    "-----------------------");
+        }
 
         int endIndex = series.getEndIndex();
 
@@ -127,8 +179,8 @@ public class Day6Backtest {
                         + tradingRecord.getPositionCount());
 
         System.out.println(
-                "Positions = "
-                        + tradingRecord.getPositions().size());
+                "Total Profit % = "
+                        + totalProfit);
 
         System.out.println(
                 "Current Position Open = "
