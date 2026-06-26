@@ -85,21 +85,22 @@ The long-term goal is to evolve this project into a complete quantitative tradin
 
 ## Project Structure
 src
-└── main
-└── java
-└── com.rithish.trading
-|__ config
-├── contracts
-├── loader
-├── indicator
-├── strategy
-├── engine
-├── report
-├── model
-├── service
-├── dto
-├── util
+│
+├── api          // Twelve Data / AlphaVantage / Polygon clients
+├── backtest     // Performance analyzers, metrics
 ├── config
+├── constant
+├── contracts
+├── dto
+├── engine
+├── exceptions
+├── indicator
+├── loader
+├── model
+├── report
+├── service
+├── strategy
+├── util
 └── App.java
 
 
