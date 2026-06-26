@@ -84,3 +84,31 @@ The long-term goal is to evolve this project into a complete quantitative tradin
 ---
 
 ## Project Structure
+src
+└── main
+└── java
+└── com.rithish.trading
+|__ config
+├── contracts
+├── loader
+├── indicator
+├── strategy
+├── engine
+├── report
+├── model
+├── service
+├── dto
+├── util
+├── config
+└── App.java
+
+
+---
+
+## Vision
+
+This project is being developed as a complete quantitative trading engine inspired by the architecture used in professional trading systems.
+
+The emphasis is on clean architecture, maintainability, extensibility, and reusable components rather than writing one large monolithic application.
+
+The final objective is to build an end-to-end platform capable of supporting research, backtesting, optimization, paper trading, and live algorithmic trading.
