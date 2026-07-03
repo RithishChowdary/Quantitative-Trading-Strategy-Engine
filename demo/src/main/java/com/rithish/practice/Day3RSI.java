@@ -1,4 +1,4 @@
-package com.rithish;
+package com.rithish.practice;
 
 import java.time.Duration;
 import java.time.Instant;

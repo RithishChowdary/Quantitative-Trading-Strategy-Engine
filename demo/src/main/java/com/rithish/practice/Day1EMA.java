@@ -1,4 +1,4 @@
-package com.rithish;
+package com.rithish.practice;
 
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.BaseBarSeriesBuilder;
