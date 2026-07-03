@@ -83,26 +83,13 @@ The long-term goal is to evolve this project into a complete quantitative tradin
 
 ---
 
-## Project Structure
-src
-│
-├── api          // Twelve Data / AlphaVantage / Polygon clients
-├── backtest     // Performance analyzers, metrics
-├── config
-├── constant
-├── contracts
-├── dto
-├── engine
-├── exceptions
-├── indicator
-├── loader
-├── model
-├── report
-├── service
-├── strategy
-├── util
-└── App.java
+## Project Structure 
 
+
+
+<img width="1916" height="1072" alt="image" src="https://github.com/user-attachments/assets/5aea86bc-4b8d-4b57-9969-358ca49fefca" />
+
+PROCESSING..
 
 ---
 
