@@ -8,10 +8,7 @@ import com.rithish.trading.model.IndicatorType;
 
 public class IndicatorRegistry {
 
-    private final Map<
-            IndicatorType,
-            IndicatorFactory> registry =
-            new HashMap<>();
+    private final Map<IndicatorType,IndicatorFactory> registry =new HashMap<>();
 
     public IndicatorRegistry() {
 
