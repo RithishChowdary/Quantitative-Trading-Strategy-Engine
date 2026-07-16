@@ -419,3 +419,6 @@ Because every collaborator is bound by an interface, the engine can move from a 
 ## Contributing
 
 Issues and pull requests that preserve the layering, respect the contracts, and add test coverage are welcome. New features should arrive as new modules and registries, not edits to existing ones.
+
+## Why this project exists?
+Most TA4J examples demonstrate indicators in isolation. This project focuses on building a reusable quantitative trading engine with production-style architecture, allowing strategies, indicators, and data providers to be extended independently.
