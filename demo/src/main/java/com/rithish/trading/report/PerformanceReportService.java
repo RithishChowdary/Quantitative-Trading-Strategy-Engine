@@ -3,7 +3,7 @@ package com.rithish.trading.report;
 import org.ta4j.core.BarSeries;
 import org.ta4j.core.TradingRecord;
 
-public class TradeReport {
+public class PerformanceReportService {
 
     public void print(BarSeries series,
                       TradingRecord tradingRecord) {
