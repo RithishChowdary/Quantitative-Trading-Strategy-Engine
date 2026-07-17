@@ -298,6 +298,7 @@ demo
         │               ├── contracts      (MarketDataLoader, StrategyFactory, IndicatorFactory, HistoricalDataDownloader)
         │               ├── dto.historical (HistoricalCandle)
         │               ├── engine         (BacktestEngine)
+        |               ├── Globalexception
         │               ├── indicator      (EMAFactory, RSIFactory, IndicatorRegistry)
         │               ├── loader         (CsvMarketDataLoader, IndianApiHistoricalLoader)
         │               ├── model          (IndicatorType, StrategyType)
@@ -307,6 +308,7 @@ demo
         │               │   └── impl       (HistoricalDataService, StrategyService)
         │               ├── strategy       (EmaRsiStrategyFactory, StrategyRegistry)
         │               └── util           (CsvWriter)
+        |                    └── App.java  
         └── resources
             └── historical
                 └── NSE
